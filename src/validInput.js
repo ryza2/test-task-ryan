@@ -3,7 +3,12 @@ function validInput(event) {
     if (event.hasOwnProperty('queryStringParameters')) {
         if (event['queryStringParameters'].hasOwnProperty('artist')) {
             cleanJSON['status'] = 200;
-            cleanJSON['artist'] = event['queryStringParameters'].artist;
+            let arrayOfName = ((event['queryStringParameters'].artist).split(' '));
+            let artist = "";
+            for (let i = 0; i < arrayOfName.length; i++) {
+                artist = artist + '+' + arrayOfName[i];
+            }
+            cleanJSON['artist'] = artist;
             return cleanJSON;
         }
     }

@@ -1,6 +1,6 @@
 var http = require('https');
 
-async function itunesRequest(track) {
+async function itunesRequest(track:string):Promise<Object> {
     return httprequest(track).then((data) => {
         const response = {
             statusCode: 200,
@@ -9,7 +9,7 @@ async function itunesRequest(track) {
         return response;
     });
 };
-function httprequest(track) {
+function httprequest(track:string):Promise<Object> {
     return new Promise((resolve, reject) => {
         const options = {
             host: 'itunes.apple.com',

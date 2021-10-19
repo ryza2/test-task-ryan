@@ -2,6 +2,7 @@
   "name": "lambda_first",
   "version": "1.0.0",
   "dependencies": {
+    "request": "^2.88.2",
     "sequelize": "^6.7.0"
   },
   "main": "index.js",

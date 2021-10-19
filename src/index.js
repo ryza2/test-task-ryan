@@ -15,7 +15,7 @@ exports.handler = (event) => __awaiter(this, void 0, void 0, function* () {
     //inputJSON has artist name
     //make a basic request:
     if (inputJSON['status'] === 200) {
-        inputJSON['artistData'] = yield itunesRequest(inputJSON['artist']);
+        inputJSON['trackData'] = yield itunesRequest(inputJSON['track']);
     }
     //let thisEvent={}
     //thisEvent['path'] = event.path;

@@ -1,14 +1,14 @@
 function validInput(event:Object) :Object {
     let cleanJSON = {};
     if(event.hasOwnProperty('queryStringParameters')){
-        if(event['queryStringParameters'].hasOwnProperty('artist')){
+        if(event['queryStringParameters'].hasOwnProperty('track')){
             cleanJSON['status']=200;
-            let arrayOfName = ((event['queryStringParameters'].artist).split(' '));
-            let artist="";
+            let arrayOfName = ((event['queryStringParameters'].track).split(' '));
+            let track="";
             for(let i=0;i<arrayOfName.length;i++){
-                artist = artist+'+'+arrayOfName[i];
+                track = track+'+'+arrayOfName[i];
             }
-            cleanJSON['artist'] = artist;
+            cleanJSON['track'] = track;
             return cleanJSON;
         }
     }

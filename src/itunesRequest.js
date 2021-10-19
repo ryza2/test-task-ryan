@@ -8,9 +8,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 var http = require('https');
-function itunesRequest(artist) {
+function itunesRequest(track) {
     return __awaiter(this, void 0, void 0, function* () {
-        return httprequest(artist).then((data) => {
+        return httprequest(track).then((data) => {
             const response = {
                 statusCode: 200,
                 body: JSON.stringify(data),
@@ -20,11 +20,11 @@ function itunesRequest(artist) {
     });
 }
 ;
-function httprequest(artist) {
+function httprequest(track) {
     return new Promise((resolve, reject) => {
         const options = {
             host: 'itunes.apple.com',
-            path: '/search?term=' + artist + '&limit=10',
+            path: '/search?term=' + track + '&entity=musicTrack&attribute=ratingIndex&limit=10',
             port: 443,
             method: 'GET'
         };

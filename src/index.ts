@@ -9,7 +9,7 @@ exports.handler = async (event) => {
 
     //make a basic request:
     if(inputJSON['status']===200){
-        inputJSON['artistData'] = await itunesRequest(inputJSON['artist']);
+        inputJSON['trackData'] = await itunesRequest(inputJSON['track']);
     }
 
 
